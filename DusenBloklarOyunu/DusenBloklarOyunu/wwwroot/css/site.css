@@ -1,0 +1,126 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    /* Web sitesinin genel arka plan görseline dokunulmadý */
+}
+
+/* Kararan arka plan */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Kararmýþ arka plan */
+    z-index: 999;
+    display: none; /* Baþlangýçta gizli */
+}
+
+/* Oyun alanýný düzenleme */
+#game-area {
+    background-color: transparent !important; /* Oyun arka planýný þeffaf yap */
+    border: none !important; /* Çerçeveyi tamamen kaldýr */
+    box-shadow: none !important; /* Ekstra gölgeler kaldýrýldý */
+    position: center; /* Pozisyonu korundu */
+    width: 100%; /* Yüzdeyle geniþlik verildi */
+    height: 150vh; /* Viewport yüksekliðine göre ayarlandý */
+    max-width: 1000px; /* Maksimum geniþlik 1000px olacak */
+    margin: 0 auto; /* Ortalamak için */
+    display: contents; /* contents */
+    justify-content: center;
+    align-items: first baseline; /* Sepet en altta olacak */
+}
+
+
+/* Oyun Baþlat Butonunu Sað Tarafa Yerleþtirme */
+#start-button {
+    position: fixed; /* Konumlandýrma yapýlacak */
+    bottom: 20px; /* Alt kýsýmdan 20px mesafe */
+    right: 20px; /* Sað kýsýmdan 20px mesafe */
+    padding: 10px 20px; /* Butonun içindeki metni rahatça gösterir */
+    font-size: 18px; /* Yazý boyutunu ayarla */
+    background-color: #4CAF50; /* Butonun arka plan rengini yeþil yap */
+    color: white; /* Yazý rengi beyaz */
+    border: none; /* Kenarlýklarý kaldýr */
+    border-radius: 5px; /* Kenarlarý yuvarlat */
+    cursor: pointer; /* Butona týklanabilir bir iþaretçi ekle */
+    z-index: 1000; /* Butonun diðer öðelerin önünde olmasýný saðla */
+}
+
+
+    /* Butona Hover Ekleme */
+    #start-button:hover {
+        background-color: #45a049; /* Hover durumunda butonun rengini deðiþtir */
+    }
+
+#level-up-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7); /* Yarý saydam siyah */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    z-index: 9999; /* Üstte gözükmesi için */
+    opacity: 0; /* Ýlk baþta görünmez */
+    transition: opacity 0.5s ease-in-out; /* Animasyon */
+}
+
+    #level-up-message.show {
+        opacity: 1; /* Görünür hale gelir */
+    }
+
+
+/* Genel Responsive Düzenlemeler */
+@media (max-width: 768px) {
+    #game-area {
+        width: 100%; /* Küçük ekranlarda tam geniþlik */
+        height: 70vh; /* Küçük ekranlarda biraz daha dar olacak */
+    }
+
+    #score-board {
+        font-size: 18px; /* Küçük ekranlarda yazý boyutunu küçültme */
+    }
+}
+
+
+/* Ýsim giriþ alaný */
+#name-input {
+    position: fixed; /* Sabit pozisyon, ekranýn ortasýnda kalacak */
+    top: 50%; /* Dikeyde ortalamak için */
+    left: 50%; /* Yatayda ortalamak için */
+    transform: translate(-50%, -50%); /* Kesin merkezleme */
+    color: white;
+    font-size: 20px;
+    z-index: 1000; /* Overlay'den üstte olsun */
+    display: none; /* Baþlangýçta gizli */
+}
+#player {
+    position: absolute;
+    bottom: 0; /* Ekranýn en altýna yerleþtir */
+    left: 50%; /* Baþlangýçta ekranýn ortasýnda */
+    width: 90px;
+    height: 90px;
+    background-image: url('/images/projesepet.png');
+    background-size: cover;
+    transform: translateX(-50%); /* Ekranýn ortasýnda baþlamak için */
+}
+

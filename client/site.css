@@ -1,0 +1,167 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+/* Leaderboard Stili */
+#leaderboard {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+#leaderboard h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#leaderboard-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#leaderboard-list li {
+    margin: 5px 0;
+    padding: 5px 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 0px;
+  
+    width: 100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    /* Web sitesinin genel arka plan görseline dokunulmadı */
+}
+
+/* Kararan arka plan */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Kararmış arka plan */
+    z-index: 999;
+    display: none; /* Başlangıçta gizli */
+}
+
+/* Oyun alanını düzenleme */
+#game-area {
+    border: none !important; /* Çerçeveyi tamamen kaldır */
+    box-shadow: none !important; /* Ekstra gölgeler kaldırıldı */
+    position: center; /* Pozisyonu korundu */
+    display: contents; /* contents */
+    justify-content: center;
+    align-items: center; /* Sepet en altta olacak */
+    width: 100%; /* Yüzdeyle genişlik verildi */
+    height: 1800px; /* Viewport yüksekliğine göre ayarlandı */
+    min-width: 1800px; /* Maksimum genişlik 1000px olacak */
+    margin: 0 auto; /* Ortalamak için */
+
+}
+
+
+/* Oyun Başlat Butonunu Sağ Tarafa Yerleştirme */
+#start-button {
+    position: fixed; /* Konumlandırma yapılacak */
+    bottom: 20px; /* Alt kısımdan 20px mesafe */
+    right: 20px; /* Sağ kısımdan 20px mesafe */
+    padding: 10px 20px; /* Butonun içindeki metni rahatça gösterir */
+    font-size: 18px; /* Yazı boyutunu ayarla */
+    background-color: #4CAF50; /* Butonun arka plan rengini yeşil yap */
+    color: white; /* Yazı rengi beyaz */
+    border: none; /* Kenarlıkları kaldır */
+    border-radius: 5px; /* Kenarları yuvarlat */
+    cursor: pointer; /* Butona tıklanabilir bir işaretçi ekle */
+    z-index: 1000; /* Butonun diğer öğelerin önünde olmasını sağla */
+}
+
+
+    /* Butona Hover Ekleme */
+    #start-button:hover {
+        background-color: #45a049; /* Hover durumunda butonun rengini değiştir */
+    }
+
+#level-up-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7); /* Yarı saydam siyah */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    z-index: 9999; /* Üstte gözükmesi için */
+    opacity: 0; /* İlk başta görünmez */
+    transition: opacity 0.5s ease-in-out; /* Animasyon */
+}
+
+    #level-up-message.show {
+        opacity: 1; /* Görünür hale gelir */
+    }
+
+
+/* Genel Responsive Düzenlemeler */
+@media (max-width: 768px) {
+    #game-area {
+        width: 100%; /* Küçük ekranlarda tam genişlik */
+        height: 120vh; /* Küçük ekranlarda biraz daha dar olacak */
+    }
+
+    #score-board {
+        font-size: 18px; /* Küçük ekranlarda yazı boyutunu küçültme */
+    }
+}
+
+
+/* İsim giriş alanı */
+#name-input {
+    position: fixed; /* Sabit pozisyon, ekranın ortasında kalacak */
+    top: 50%; /* Dikeyde ortalamak için */
+    left: 50%; /* Yatayda ortalamak için */
+    transform: translate(-50%, -50%); /* Kesin merkezleme */
+    color: white;
+    font-size: 20px;
+    z-index: 1000; /* Overlay'den üstte olsun */
+    display: none; /* Başlangıçta gizli */
+}
+#player {
+    position: absolute;
+    bottom: 0; /* Ekranın en altına yerleştir */
+    left: 50%; /* Başlangıçta ekranın ortasında */
+    width: 90px;
+    height: 90px;
+    background-image: url('/images/projesepet.png');
+    background-size: cover;
+    transform: translateX(-50%); /* Ekranın ortasında başlamak için */
+}
